@@ -51,13 +51,6 @@ export const frontendUrl =
       : process.env.SANITY_FRONTEND_URL!
     : window.ENV.SANITY_FRONTEND_URL!
 
-console.log(
-  frontendUrl,
-  PRODUCTION_URL,
-  typeof document,
-  process.env.NODE_ENV,
-  process.env,
-)
 export const studioUrl =
   typeof document === 'undefined'
     ? process.env.NODE_ENV === 'production'
