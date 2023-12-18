@@ -28,10 +28,10 @@ export function Gallery({images}: {images: {src: string; altText: string}[]}) {
 
   return (
     <>
-      <div className="relative md:aspect-square h-full max-h-[550px] w-full">
+      <div className="relative h-full w-full">
         {images[imageIndex] && (
           <img
-            className="h-full w-full object-contain"
+            className="h-full w-full"
             sizes="(min-width: 1024px) 66vw, 100vw"
             alt={images[imageIndex]?.altText as string}
             src={images[imageIndex]?.src as string}

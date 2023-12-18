@@ -99,6 +99,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" href="https://fav.farm/🤘" />
+
         <Links />
       </head>
       <body className={bodyClassNames}>

@@ -10,7 +10,6 @@ export function Header(props: LayoutProps) {
       <div className="container mx-auto flex items-center justify-between p-4 lg:px-12">
         <Logo home={props.home} />
         <div className="flex gap-4 items-end">
-          <ShoppingCartIcon className="mb-1 cursor-pointer" />
           <ThemeToggle theme={props.theme} />
         </div>
       </div>
