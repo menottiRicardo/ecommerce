@@ -41,31 +41,29 @@ export const projectDetails = () => ({
 
 // TODO: Replace with YOUR production domain
 // This is used to enable stega on any URL except this one
-export const PRODUCTION_URL = 'https://sanity-remix-template.sanity.build'
+export const PRODUCTION_URL = 'https://ecommerce-production-ad8b.up.railway.app'
 
 // With the logic below we enable stega only on the non-production domain
 export const frontendUrl =
   typeof document === 'undefined'
-    ? process.env.VERCEL
-      ? `https://${process.env.VERCEL_BRANCH_URL}`
+    ? process.env.NODE_ENV === 'production'
+      ? PRODUCTION_URL
       : process.env.SANITY_FRONTEND_URL!
     : window.ENV.SANITY_FRONTEND_URL!
 
+console.log(
+  frontendUrl,
+  PRODUCTION_URL,
+  typeof document,
+  process.env.NODE_ENV,
+  process.env,
+)
 export const studioUrl =
   typeof document === 'undefined'
-    ? process.env.VERCEL
-      ? process.env.VERCEL_ENV !== 'production'
-        ? `https://${process.env.VERCEL_URL}`
-        : PRODUCTION_URL
+    ? process.env.NODE_ENV === 'production'
+      ? PRODUCTION_URL
       : process.env.SANITY_STUDIO_URL!
     : window.ENV.SANITY_STUDIO_URL!
 
 export const stegaEnabled =
   new URL(studioUrl).hostname !== new URL(PRODUCTION_URL).hostname
-
-// If any of these values are missing, throw errors as the app requires them
-if (!projectId) throw new Error('Missing SANITY_STUDIO_PROJECT_ID in .env')
-if (!dataset) throw new Error('Missing SANITY_STUDIO_DATASET in .env')
-if (!apiVersion) throw new Error('Missing SANITY_STUDIO_API_VERSION in .env')
-if (!frontendUrl) throw new Error('Missing SANITY_FRONTEND_URL in root route')
-if (!studioUrl) throw new Error('Missing SANITY_STUDIO_URL in root route')
