@@ -89,7 +89,7 @@ export default function App() {
   const {initial, query, params, theme, bodyClassNames, sanity, ENV} =
     useLoaderData<typeof loader>()
   const {data, loading} = useQuery<typeof initial.data>(query, params, {
-    initial,
+    initial: initial as any,
   })
 
   return (

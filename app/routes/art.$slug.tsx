@@ -116,7 +116,7 @@ export const loader = async ({params, request}: LoaderFunctionArgs) => {
 export default function RecordPage() {
   const {initial, query, params} = useLoaderData<typeof loader>()
   const {data, loading} = useQuery<typeof initial.data>(query, params, {
-    initial,
+    initial: initial as any,
   })
 
   if (loading || !data) {

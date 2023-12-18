@@ -44,7 +44,6 @@ export function GridTileImage({
         <Label
           title={label.title}
           amount={label.amount}
-          currencyCode={label.currencyCode}
           position={label.position}
         />
       ) : null}
