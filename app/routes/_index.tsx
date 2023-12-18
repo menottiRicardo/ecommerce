@@ -43,7 +43,7 @@ export const loader = async () => {
 export default function Index() {
   const {initial, query, params} = useLoaderData<typeof loader>()
   const {data, loading} = useQuery<typeof initial.data>(query, params, {
-    initial,
+    initial: initial as any,
   })
 
   if (loading || !data) {

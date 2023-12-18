@@ -33,10 +33,13 @@ export const artType = defineType({
       initialValue: 'ACTIVE',
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      options: {hotspot: true},
-      fields: [defineField({name: 'alt', type: 'string'})],
+      name: 'price',
+      type: 'number',
+    }),
+    defineField({
+      name: 'images',
+      type: 'array',
+      of: [{type: 'image'}],
     }),
   ],
   preview: {
