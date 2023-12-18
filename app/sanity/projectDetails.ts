@@ -21,9 +21,9 @@ const {
   SANITY_STUDIO_API_VERSION,
 } = typeof document === 'undefined' ? process.env : window.ENV
 
-export const projectId = SANITY_STUDIO_PROJECT_ID!
-export const dataset = SANITY_STUDIO_DATASET!
-export const apiVersion = SANITY_STUDIO_API_VERSION!
+export const projectId = SANITY_STUDIO_PROJECT_ID ?? 'hq4hqv5o'
+export const dataset = SANITY_STUDIO_DATASET ?? 'production'
+export const apiVersion = SANITY_STUDIO_API_VERSION ?? '2023-11-15'
 
 export const projectDetails = () => ({
   projectId,

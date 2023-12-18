@@ -74,7 +74,7 @@ export const loader = async ({request}: LoaderFunctionArgs) => {
       stegaEnabled,
     },
     ENV: {
-      SANITY_STUDIO_PROJECT_ID: process.env.SANITY_STUDIO_PROJECT_ID!,
+      SANITY_STUDIO_PROJECT_ID: process.env.SANITY_STUDIO_PROJECT_ID ?? '',
       SANITY_STUDIO_DATASET: process.env.SANITY_STUDIO_DATASET!,
       SANITY_STUDIO_API_VERSION: process.env.SANITY_STUDIO_API_VERSION!,
       // URL of the Frontend that will be loaded into Presentation
